@@ -1,0 +1,23 @@
+<div class="register container position-absolute top-0 start-50 translate-middle ">
+    <h1 class=""><em>I'm looking for..</em></h1>
+    <div class="job-desc d-flex justify-content-between flex-wrap mt-5 me-2">
+        <input type="text" name="jobdesc" id="jobdesc" placeholder="Enter a Job Description" class="fst-italic">
+        <button type="button" class="btn btn-info text-light" id="register"><fa-icon [icon]="faSearchengin" class="pe-2 "></fa-icon><em>Search</em></button>
+    </div>
+    <div class="job-selection d-flex justify-content-between align-items-center flex-wrap pt-4 ">
+        <div class="checkbox">
+            <input type="checkbox" name="full-time" id="full-time">
+            <label for="full-time">Full Time</label>
+            <input type="checkbox" name="part-time" id="part-time">
+            <label for="part-time">Part Time/ Casual/ Freelance</label>
+        </div>
+        <div class="select-location">
+            <select name="location" id="location" class="fst-italic">
+                <option value="#" class="text-secondary" selected>Select your Location</option>
+                <option value="mum">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="bangalore">Bangalore</option>
+            </select>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+input{
+    height: 20px;
+    padding:10px;
+    margin-left: 10px;
+}
+
+footer{
+    height: 200px;
+    background-color: #DEE2E6;
+}
+
+.tweet,.facebook{
+    font-size: 12px;
+    margin-left: 5px;
+    /* width: 30px; */
+}

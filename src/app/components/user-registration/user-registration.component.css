@@ -1,0 +1,37 @@
+.user-registration{
+    /* border: 1px solid red; */
+    margin-bottom: 75px;
+}
+
+div{
+    z-index:2 !important;
+}
+
+p{
+    z-index: 10 !important;
+}
+
+.icon{
+    font-size: 30px;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+mat-slider{
+    width: 50px;
+}
+
+.mat-chip{
+    /* width: 0; */
+    border:0;
+}
+
+/* input.ng-invalid{
+    border: 5px solid red;
+}
+
+input.ng-valid{
+    border: 5px solid green;
+} */

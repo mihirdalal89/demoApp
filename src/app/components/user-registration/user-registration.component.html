@@ -1,0 +1,114 @@
+<p class="position-absolute top-0 start-50 translate-middle-x">
+  <ngb-toast *ngIf="message" class="bg-success text-light">
+     Data Submitted Successfully.
+  </ngb-toast>
+</p>
+
+<div class="container user-registration position-absolute bottom-0 start-50 translate-middle">
+  <div class="text-center">
+        <button type="button" class="btn btn-primary p-3" (click)="openLg(content)">Register</button>
+    </div> 
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header bg-primary text-light">
+        <h4 class="modal-title">Register</h4>
+        <fa-icon class=" text-light icon" [icon]="faTimesCircle" (click)="modal.dismiss('Cross click')"></fa-icon>
+      </div>
+      <div class="modal-body">
+        <form class="row" [formGroup]="register" (ngSubmit)="saveData()">
+          <div class="col-5 text-center">
+            <img [src]="url" alt="" height="200" width="200">
+            <input type="file" name="upload-image" id="upload-image" class="form-control" (change)="onFileSelected($event)" formControlName="image">
+            <!-- <button type="button" class="text-primary" (click)="onUpload()">Upload your photo</button> -->
+          </div>  
+          <div class="col-7">
+            <div class="row name mb-2">
+              <!-- <div class="col-7">
+                <input type="text" class="form-control" id="first-name" placeholder="First Name">
+              </div> -->
+              <!-- <div class=""> -->
+                <input type="text" class="form-control col" id="first-name" placeholder="First Name" formControlName="firstName">  
+                <input type="text" class="form-control col" id="last-name" placeholder="Last Name" formControlName="lastName">
+              <!-- </div> -->
+            </div>
+            <div class="row text-danger">
+              <span class="col" *ngIf="firstName && firstName.invalid && firstName.touched">Name required, length should be less than 20, only alphabets allowed</span>
+              <span class="col" *ngIf="lastName && lastName.invalid && lastName.touched">Last Name required, length should be less than 20, only alphabets allowed</span>
+            </div>
+            <div class="row mb-2">
+              <input type="email" class="form-control"  placeholder="Email" formControlName="email">
+              <span *ngIf="email && email.invalid && email.touched" class="text-danger">email is not valid</span>
+            </div>
+            <div class="row mb-2">
+              <input type="text" class="form-control" id="number" placeholder="(541) 754-3010" formControlName="phone">
+            </div>
+            <div class="row mb-2">
+              <p class="col-3 align-self-end">Age</p>
+              <mat-slider #agevalue color="primary" (change)="updateValue($event)"  step="1" min="20" max="60" [value]="ageValue" class="col-9" formControlName="age">
+              </mat-slider>
+            </div>
+            <div class="row mb-2">
+              <span class="col-3"></span>
+              <span class="col-9">
+                <span>{{agevalue.value}}</span>
+                <span class="float-end">60</span>
+              </span>
+            </div>
+            <div class="input-group  mb-2">
+              <label class="input-group-text" for="state">State</label>
+
+              <select name="state" id="state" class="form-select " formControlName="state">
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="bangalore">Bangalore</option>
+              </select>
+            </div>
+            <div class="input-group mb-2">
+                <label class="input-group-text" for="country">Country</label>
+            
+                <select name="country" id="country" class="form-select" formControlName="country">
+                  <option value="ind">India</option>
+                  <option value="us">U.S.A</option>
+                  <option value="can">Cannada</option>
+                  <option value="uk">United Kingdom</option>
+                </select>
+            </div>
+            <div class="row form-floating mb-2">
+              <textarea name="address" id="address" class="form-control" placeholder="Address" formControlName="address"></textarea>
+              <label for="address">Address</label>
+            </div>
+            <div class="row mb-2">
+              <mat-label>Tags</mat-label>
+              
+                <input placeholder="Tags" [matChipInputFor]="chipList" [matChipInputAddOnBlur]="addOnBlur"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  (matChipInputTokenEnd)="add($event)" class="form-control" formControlName="hobies">
+
+                <mat-chip-list #chipList aria-label="Tags" class="mt-3" >
+                  <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)" class="rounded bg-dark">
+                    {{fruit.name}}
+                    <button matChipRemove>
+                      <mat-icon class="">
+                        cancel
+                      </mat-icon>
+                    </button>
+                  </mat-chip>
+                </mat-chip-list>
+             
+            </div>
+            <div class="form-check mb-2">
+                <input type="checkbox" class="form-check-input" id="subscribe" formControlName="subscribe">
+                <label class="form-check-label" for="subscribe">subscribe to newsletter</label>
+            </div>
+            <div class="row mb-2">
+              <div class="col">
+                <button class="btn btn-outline-danger" type="button" (click)="modal.close('Close click')"> Cancel</button> 
+              </div>
+              <div class="col"><button class="btn btn-outline-success" type="submit" (click)="modal.dismiss()" [disabled]="register.invalid"> Submit</button> </div>
+            </div>
+          </div>  
+        </form>
+      </div> 
+</ng-template>

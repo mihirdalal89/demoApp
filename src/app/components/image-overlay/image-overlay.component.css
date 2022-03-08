@@ -1,0 +1,9 @@
+.image-overlay{
+    height: 650px;
+    width: 100%;
+    z-index: 1;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+}

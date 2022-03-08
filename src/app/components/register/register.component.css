@@ -1,0 +1,58 @@
+.job-desc input{
+    /* border-radius: 0; */
+    width: 960px;
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+
+
+.job-selection{
+    /* border: 1px solid red; */
+    width: 960px;
+}
+
+@media(max-width:1130px){
+    .job-selection{
+        width: 400px;
+    }
+    .select-location{
+        margin-top: 10px;
+    }
+}
+
+
+.job-selection label{
+    margin: 0 10px;
+}
+
+#location{
+    padding: 10px;
+    width: 300px;
+    /* border: 1px solid red; */
+}
+
+.register{
+    /* position: absolute;
+    top:0; */
+    z-index: 2;
+    /* padding: 0; */
+    /* margin:0 130px; */
+    color: #fff;
+    margin-top: 350px;
+}
+
+@media (max-width: 1130){
+    /* .job-desc input{
+        width: 0px;
+    } */
+    /* .checkbox{
+        display: block;
+    }
+    .select-location{
+        display: block;
+    } */
+    /* .register{
+        margin: 0 80px
+    } */
+}

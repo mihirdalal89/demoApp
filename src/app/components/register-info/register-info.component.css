@@ -1,0 +1,29 @@
+.home{
+    z-index: 4 !important;
+    height: 650px;
+}
+
+.home p{
+    z-index: 4;
+}
+
+.content{
+    margin-top: 150px;
+}
+
+
+
+.main{
+    height: 250px;
+    width: 250px;
+    margin-right: 50px;
+}
+
+.photo{
+    height: 250px;
+    width: 250px;
+}
+
+.photo img{
+    transform: translateX(-13px);
+}
